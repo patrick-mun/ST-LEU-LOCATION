@@ -1,0 +1,15 @@
+.btn {
+    display: inline-block;
+    color: var(--light-color);
+    padding: 1vh 2vw;
+    text-decoration: none;
+    border-radius: 0.5vw;
+    font-size: 1.2vw;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+.btn:hover {
+    color: #eeb47d;
+}
+
