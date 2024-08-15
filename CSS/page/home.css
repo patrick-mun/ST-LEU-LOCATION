@@ -6,8 +6,9 @@
 }
 
 .banner-image {
-    width: 100%;
-    height: auto;
+    width: 90%;
+    height: 30VW;
+    margin-top: 9vw;
 }
 
 .banner-content {
@@ -16,17 +17,90 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+h1{
+    margin-top: 10vw;
+}
 
 .btn-reservation {
-    background-color: #f04e31;
+    background-color: var(--primary-color);
     color: white;
+    margin-top: 2vw;
+    display: inline-block;
     padding: 10px 20px;
     text-decoration: none;
     font-size: 1.2em;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .btn-reservation:hover {
-    background-color: #d04329;
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: 3px solid var(--primary-color);
 }
+h1, h2{
+    color: var(--secondary-color);
+}
+
+/* Media Query pour les écrans de max 1100px */
+@media screen and (max-width: 1100px) {
+    .banner-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .banner-content {
+        top: 40%;
+        font-size: 1em;
+    }
+
+    .btn-reservation {
+        font-size: 1em;
+        padding: 8px 16px;
+    }
+}
+/* Styles pour la section de présentation */
+.presentation-section {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.presentation-wrapper {
+    background-color: rgba(255, 255, 255, 0.9); /* Fond blanc semi-transparent */
+    padding: 20px;
+    width: 85%; /* Largeur de 90% pour correspondre à la taille du bandeau */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Effet d'ombre pour détacher la div du fond */
+    border-radius: 10px; /* Coins arrondis pour un effet "carton" */
+}
+
+.presentation-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.presentation-image {
+    width: 40%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.presentation-text {
+    width: 55%;
+    margin-left: 5%;
+}
+
+.presentation-text h2 {
+    font-size: 2em;
+    color: var(--secondary-color);
+}
+
+.presentation-text p {
+    font-size: 1.1em;
+    color: var(--primary-color);
+    line-height: 1.6;
+}
+
+
 
