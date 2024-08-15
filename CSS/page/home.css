@@ -101,6 +101,100 @@ h1, h2{
     color: var(--primary-color);
     line-height: 1.6;
 }
+/* Styles pour la section de la galerie */
+.gallery-section {
+    text-align: center;
+    padding: 40px 0;
+}
 
+.gallery-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
 
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacement entre les images */
+    flex-wrap: wrap; /* Permet aux images de passer à la ligne sur des écrans plus petits */
+}
 
+.gallery-item {
+    flex: 1 1 calc(25% - 20px); /* Chaque image occupe environ 25% de la largeur avec un espace */
+    max-width: calc(25% - 20px);
+    position: relative;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05); /* Légère augmentation de l'image au survol */
+}
+
+/* Styles pour le pop-up */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup.open {
+    display: flex;
+}
+
+.popup-image {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Styles pour les boutons de navigation */
+.popup-prev, .popup-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 3em;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+}
+
+.popup-prev {
+    left: 20px;
+}
+
+.popup-next {
+    right: 20px;
+}
+
+.popup-prev:hover, .popup-next:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Ajustements pour les petits écrans */
+@media screen and (max-width: 768px) {
+    .popup-prev, .popup-next {
+        font-size: 2em;
+    }
+
+    .popup-image {
+        max-width: 90%;
+        max-height: 70%;
+    }
+}
