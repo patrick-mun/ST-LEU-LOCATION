@@ -1,0 +1,32 @@
+/* Styles pour la section de bande d'accueil */
+.banner-section {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+}
+
+.banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn-reservation {
+    background-color: #f04e31;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 5px;
+}
+
+.btn-reservation:hover {
+    background-color: #d04329;
+}
+
