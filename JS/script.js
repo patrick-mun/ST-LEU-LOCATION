@@ -110,3 +110,11 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch(error => console.error('Erreur de chargement du home:', error));
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    // Vérifiez s'il y a une promotion active
+    var hasPromotion = true; // Changez cette variable en fonction de la promotion
+
+    if (hasPromotion) {
+        document.querySelector('.banner-section').classList.add('promotion-active');
+    }
+});

@@ -12,10 +12,12 @@ header {
     z-index: 1000;
 }
 
-header .logo img {
+header {
     height: 12vh;
 }
-
+.logo img {
+    height: 17vh;
+}
 nav {
     position: relative;
 }
