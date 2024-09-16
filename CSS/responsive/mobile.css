@@ -1,0 +1,60 @@
+/* responsive-mobile.css */
+/* Pour les écrans mobiles (moins de 768px) */
+@media (max-width: 768px) {
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        background-color: #ffffff;
+        position: relative;
+    }
+
+    .logo img {
+        width: 80px;
+        height: auto;
+        padding: 5px;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+        flex-direction: column;
+        align-items: center;
+        z-index: 999;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #333;
+        font-size: 18px;
+        padding: 10px 20px;
+        display: block;
+        text-align: center;
+    }
+
+    .menu-burger {
+        font-size: 28px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 15px; /* Positionné à droite de l'écran */
+        z-index: 1000;
+    }
+
+    .nav-menu.hidden {
+        display: flex; /* Affiche le menu quand la classe hidden est retirée */
+    }
+}

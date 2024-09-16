@@ -1,19 +1,28 @@
 <header>
+    <!-- Logo -->
     <div class="logo">
         <img src="/image/Tikazmiriame.png" alt="Logo">
     </div>
-    <nav>
-        <ul class="nav-links">
+    <!-- Barre de navigation -->
+    <nav class="navbar">
+        <!-- Liste des liens de navigation, masquée par défaut sur mobile -->
+        <ul class="nav-links nav-menu hidden">
             <li><a href="index.html">Accueil</a></li>
             <li><a href="reservation.html">Réservation</a></li>
-            <li><a href="../activty.html">Activités</a></li>
+            <li><a href="activty.html">Activités</a></li>
             <li><a href="restaurants.html">Restaurants</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        <div class="burger">
-            <div class="line1">Accueil</div>
-            <div class="line2">RéSERVATION</div>
-            <div class="line3"></div>
-        </div>
+        <!-- Bouton du menu burger -->
+        <button class="menu-burger" aria-label="Menu">
+            &#9776; <!-- Icône du menu burger -->
+        </button>
     </nav>
 </header>
+
+<!-- Script JavaScript pour gérer l'ouverture/fermeture du menu burger -->
+<script>
+    document.querySelector('.menu-burger').addEventListener('click', function() {
+        document.querySelector('.nav-menu').classList.toggle('hidden');
+    });
+</script>

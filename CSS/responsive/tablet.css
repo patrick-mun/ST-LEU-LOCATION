@@ -1,0 +1,10 @@
+/* Pour les écrans de tablette (768px à 1199px) */
+@media (max-width: 1199px) {
+    .banner-text {
+        text-align: center;
+        padding: 20px;
+    }
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr; /* Passe à 2 colonnes */
+    }
+}
