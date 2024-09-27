@@ -1,60 +1,175 @@
-/* responsive-mobile.css */
-/* Pour les écrans mobiles (moins de 768px) */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Media query pour les petits écrans (moins de 768px) */
 @media (max-width: 768px) {
+    
+    /* Style pour le header */
     header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 10px 20px;
-        background-color: #ffffff;
-        position: relative;
-    }
-
-    .logo img {
-        width: 80px;
-        height: auto;
-        padding: 5px;
-    }
-
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 60px;
-        left: 0;
         width: 100%;
-        background-color: #ffffff;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        padding: 10px 0;
-        flex-direction: column;
+        background-color: transparent;
+        position: fixed;
+        z-index: 1001;
+        padding: 10px;
+        background-color: #5990A3;
+        display: flex;
+        justify-content: space-between;
         align-items: center;
-        z-index: 999;
     }
 
-    .nav-links li {
-        margin: 10px 0;
+    /* Style pour le logo dans le header */
+    .logo img {
+        width: 100px; /* Taille ajustée du logo pour mobile */
+        height: auto;
     }
 
-    .nav-links a {
-        text-decoration: none;
-        color: #333;
-        font-size: 18px;
-        padding: 10px 20px;
-        display: block;
-        text-align: center;
-    }
-
+    /* Style pour le menu burger */
     .menu-burger {
-        font-size: 28px;
+        font-size: 28px; /* Taille ajustée du menu burger pour mobile */
         background: none;
         border: none;
         cursor: pointer;
         position: absolute;
-        top: 15px;
-        right: 15px; /* Positionné à droite de l'écran */
-        z-index: 1000;
+        top: -25px;
+        right: 25px;
+        z-index: 1001;
     }
 
-    .nav-menu.hidden {
-        display: flex; /* Affiche le menu quand la classe hidden est retirée */
+    /* Style pour la bannière */
+    .banner-section {
+        width: 100%;
+        height: 20vh; /* Hauteur ajustée pour les petits écrans */
+        background: url('/image/banner.jpg') no-repeat center center; /* Exemple d'image de fond */
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin-top: 140px; /* Pour ajouter de l'espace entre la bannière et le header */
+    }
+    .banner-image {
+        width: 100%;
+        height: 40VW;
+        margin-top: 9vw;
+        opacity: 0.7; 
+    }
+    .banner-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    h1 {
+        font-size: 19px;
+        margin-bottom: 8px;
+    }
+    h2 {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+    .btn-reservation {
+        margin-top: 20px;
+    }
+
+    /* Promotion tag */
+    .promotion-banner {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: red;
+        color: white;
+        padding: 3px 10px;
+        font-size: 12px;
+        font-weight: bold;
+        border-radius: 5px;
+        margin-top: 15VW;
+        z-index: 101;
+    }
+    .presentation-section { 
+        margin: 100px 0 20px 0;
+    }
+
+    /* Styles pour la section de la galerie */
+    .gallery-section {
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .gallery-section h2 {
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+
+    .gallery-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* Espacement entre les images */
+        flex-wrap: wrap; /* Permet aux images de passer à la ligne sur des écrans plus petits */
+    }
+
+    .gallery-item {
+        flex: 1 1 calc(50% - 20px); /* Chaque image occupe 50% de la largeur sur mobile */
+        max-width: calc(50% - 20px);
+        position: relative;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .gallery-item img:hover {
+        transform: scale(1.05); /* Légère augmentation de l'image au survol */
+    }
+
+    /* Style pour le menu pop-up */
+    .nav-links {
+        display: none; /* Masqué par défaut */
+        position: fixed;
+        top: 30%; /* Centré verticalement */
+        left: 70%; /* Centré horizontalement */
+        transform: translate(-50%, -50%); /* Centrer réellement */
+        width: 50%; /* Largeur du popup ajustée pour mobile */
+        background-color: #5990A3; /* Fond du popup */
+        padding: 20px;
+        border-radius: 8px; /* Ajouter des bords arrondis */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Ombre pour donner du relief */
+        z-index: 1000;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-links.active {
+        display: flex; /* Afficher le menu */
+    }
+
+    /* Style pour les éléments du menu */
+    .nav-links li a {
+        text-decoration: none;
+        color: #fff; /* Texte blanc par défaut */
+        font-size: 20px; /* Taille de police ajustée pour mobile */
+        padding: 15px; /* Espacement ajusté pour mobile */
+        width: 100%; /* Prendre toute la largeur de l'élément */
+        text-align: center;
+        border-radius: 4px; /* Arrondir légèrement les coins */
+        transition: color 0.3s ease; /* Transition pour l'effet hover */
+    }
+
+    /* Changer la couleur de texte au survol */
+    .nav-links a:hover {
+        color: #000; /* Texte noir au survol */
+    }
+
+    /* Mettre en évidence la page active */
+    .nav-links a.active {
+        font-weight: bold;
+        text-decoration: underline;
     }
 }

@@ -5,3 +5,13 @@
         gap: 20px;
     }
 }
+
+/* Fix for menu burger on large screens */
+@media (min-width: 769px) {
+    .menu-burger {
+        display: none; /* Hide the menu burger */
+    }
+    .nav-links {
+        display: flex; /* Show the navigation links */
+    }
+}

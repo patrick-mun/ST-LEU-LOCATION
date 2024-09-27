@@ -22,7 +22,7 @@
 .promotion-banner {
     position: absolute;
     top: 10px;
-    left: 10px;
+    left: 20px;
     padding: 5px 15px;
     font-size: 1.2em;
     color: red;
@@ -31,6 +31,7 @@
     transform: rotate(-45deg);
     transform-origin: left top;
     z-index: 1;
+    margin-top: 12vw;
     display: none; /* Par défaut, il est masqué */
 }
 

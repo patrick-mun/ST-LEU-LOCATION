@@ -7,7 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
         if (header) {
             fetch("HTML/header.html")
                 .then(response => response.text())
-                .then(data => header.innerHTML = data)
+                .then(data => {
+                    header.innerHTML = data;
+                    toggleMenu(); // Appel de la fonction toggleMenu après l'insertion du header
+                })
                 .catch(error => console.error('Erreur de chargement du header:', error));
         }
 
@@ -16,6 +19,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 .then(response => response.text())
                 .then(data => footer.innerHTML = data)
                 .catch(error => console.error('Erreur de chargement du footer:', error));
+        }
+    }
+
+    // Fonction pour ouvrir/fermer le menu burger
+    function toggleMenu() {
+        const menuBurger = document.querySelector('.menu-burger');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (menuBurger && navLinks) {
+            menuBurger.addEventListener('click', function () {
+                navLinks.classList.toggle('active'); // Bascule la classe 'active' pour afficher/masquer le menu
+            });
+        } else {
+            console.error("Menu burger ou navigation introuvable dans le DOM.");
         }
     }
 
@@ -96,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Appeler les fonctions après le chargement du DOM
+    // Appeler la fonction includeHTML après le chargement du DOM
     includeHTML();
 
     // Charger la section home et initialiser la galerie après le chargement
@@ -104,17 +121,21 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.text())
         .then(data => {
             document.getElementById('home-section').innerHTML = data;
-            // Réinitialiser la galerie après l'insertion du contenu
+
+            // Appeler initializeGallery après le chargement du home
             initializeGallery();
+
+            // Vérifier la promotion et ajouter la classe après le chargement de home.html
+            var hasPromotion = true; // Changez cette variable en fonction de la promotion
+            const bannerSection = document.querySelector('.banner-section');
+
+            if (bannerSection && hasPromotion) {
+                bannerSection.classList.add('promotion-active');
+            } else if (!bannerSection) {
+                console.warn(".banner-section introuvable dans le DOM.");
+            }
         })
-        .catch(error => console.error('Erreur de chargement du home:', error));
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    // Vérifiez s'il y a une promotion active
-    var hasPromotion = true; // Changez cette variable en fonction de la promotion
-
-    if (hasPromotion) {
-        document.querySelector('.banner-section').classList.add('promotion-active');
-    }
+        .catch(error => {
+            console.error('Erreur de chargement du home:', error);
+        });
 });
